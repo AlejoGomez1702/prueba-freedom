@@ -18,6 +18,7 @@ use App\Http\Controllers\CorralController;
 Route::post('/animals', [AnimalController::class, 'createAnimal']);
 Route::post('/corrals', [CorralController::class, 'createCorral']);
 Route::get('/corrals', [CorralController::class, 'getAllCorrals']);
+Route::get('/corrals/{id}/avg', [CorralController::class, 'getAnimalsAvg']);
 
 
 
