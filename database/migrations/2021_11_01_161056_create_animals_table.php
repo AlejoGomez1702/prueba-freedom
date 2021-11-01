@@ -15,7 +15,17 @@ class CreateAnimalsTable extends Migration
     {
         Schema::create('animals', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->enum('dangerousness', ['low', 'medium', 'high']);
+            $table->unsignedSmallInteger('age');
             $table->timestamps();
+
+            // Un animal pertenece a un corral.
+            $table->foreignId('corral_id')
+                                        ->nullable()
+                                        ->constrained()
+                                        ->onUpdate('cascade')
+                                        ->onDelete('set null');
         });
     }
 

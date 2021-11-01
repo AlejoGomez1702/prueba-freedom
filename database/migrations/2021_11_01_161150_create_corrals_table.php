@@ -15,6 +15,7 @@ class CreateCorralsTable extends Migration
     {
         Schema::create('corrals', function (Blueprint $table) {
             $table->id();
+            $table->unsignedSmallInteger('capacity');
             $table->timestamps();
         });
     }
